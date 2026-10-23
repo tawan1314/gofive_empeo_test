@@ -1,0 +1,29 @@
+{
+    "companyTypeList": {
+        "wholeSale": "ค้าปลีก",
+        "eCommerce": "eCommerce",
+        "technology": "เทคโนโลยี",
+        "software": "ซอฟต์แวร์ การพัฒนาแอพ",
+        "infrastructure": "Infrastructure",
+        "itServices": "บริการด้านไอที",
+        "manufacturing": "อุตสาหกรรม/โรงงาน",
+        "construction": "การก่อสร้าง",
+        "hospitality": "โรงแรม",
+        "automotive": "ยานยนต์",
+        "logistics": "โลจิสติกส์",
+        "importExport": "นำเข้าและส่งออก",
+        "health": "สุขภาพ",
+        "medicine": "การแพทย์และร้านยา",
+        "food": "อาหารและเครื่องดื่ม",
+        "finance": "การเงินและประกันภัย",
+        "marketing": "สื่อและการตลาด",
+        "electronics": "อิเล็กทรอนิกส์",
+        "government": "องค์กรภาครัฐ",
+        "researchCenter": "มูลนิธิสมาคมและศูนย์วิจัย",
+        "training": "การศึกษาและการฝึกอบรม",
+        "realEstate": "อสังหาริมทรัพย์",
+        "accounting": "บัญชี",
+        "service": "บริการ",
+        "other": "อื่นๆ"
+    }
+}

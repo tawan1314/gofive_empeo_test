@@ -1,0 +1,66 @@
+{
+    "registerPage": {
+        "formTitle": "Try empeo for free!",
+        "formDetail": "No credit card required. Cancel anytime.",
+        "companyRadioLabel": {
+            "thai": "Thai Company",
+            "other": "Others"
+        },
+        "couponCodeLabel": "Redeem a promo code",
+        "applyCouponLabel": "Apply",
+        "tryForFreeButton": "Try for free",
+        "signInButton": "Sign In",
+        "errorMessage": {
+            "taxId": "Please fill in Tax ID or company name",
+            "fillNecessaryData": "Please enter all required information.",
+            "companyType": "Please fill in your business type",
+            "userAmount": "Please fill in number of employee?",
+            "email": "Please fill in e-mail",
+            "firstName": "Please fill in first name",
+            "lastName": "Please fill in last name",
+            "phone": "Please fill in your mobile number",
+            "termAndCond": "Please accept the Privacy Policy and Terms and Conditions",
+            "emailWrongFormat": "Please enter a valid email address.",
+            "phoneWrongFormat": "Invalid mobile number",
+            "emailExisting": "This email is already in use. Try signing in or clicking forget password."
+        },
+        "otp": {
+            "title": "Check your message",
+            "desc": "Please enter the OTP sent to your",
+            "ref": "ref:",
+            "verifyButton": "Verify",
+            "canResendInLabel": "Can resend in",
+            "didNotGetOTPLabel": "Didn’t get an OTP?",
+            "resendLabel": "Resend",
+            "wrongOTPToast": {
+                "title": " Heads up! ",
+                "desc": "Incorrect OTP. Please try again."
+            },
+            "errorAlert": {
+                "title": "Error!",
+                "desc": "Oops...",
+                "okButton": "OK"
+            }
+        }
+    },
+    "createPasswordPage" : {
+        "title": "Create your password",
+        "desc": "Password must meet the security requirements below",
+        "createPasswordButton": "Create Password",
+        "errorMessage": {
+            "passwordEmpty": "Please fill in password",
+            "confirmPasswordEmpty": "Please confirm password",
+            "confirmPasswordNotMatch": "The password confirmation doesn’t match"
+        },
+        "passwordConditions": {
+            "cond1": "Aa",
+            "cond2": "123",
+            "cond3": "at least 8 characters"
+        }
+    },
+    "resultPage": {
+        "title": "empeo is now ready for you!",
+        "desc": "Big congrats! You can enjoy your free trial now.",
+        "letsGetStartedButton": "Let’s get started!"
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "registerPage": {
+        "formTitle": "ทดลองใช้งาน empeo ฟรี!",
+        "formDetail": "ไม่จำเป็นต้องใช้บัตรเครดิต ยกเลิกได้ทุกเมื่อ",
+        "companyRadioLabel": {
+            "thai": "บริษัทจดทะเบียนในไทย",
+            "other": "อื่นๆ"
+        },
+        "couponCodeLabel": "ใช้โค้ดส่วนลด",
+        "applyCouponLabel": "ใช้โค้ด",
+        "tryForFreeButton": "ทดลองใช้ฟรี",
+        "signInButton": "เข้าสู่ระบบ",
+        "errorMessage": {
+            "taxId": "กรุณากรอกเลขประจำตัวผู้เสียภาษีหรือชื่อบริษัท",
+            "fillNecessaryData": "กรุณากรอกข้อมูลที่จำเป็นทั้งหมด",
+            "companyType": "กรุณากรอกประเภทธุรกิจ",
+            "userAmount": "กรุณากรอกผู้ใช้งาน",
+            "email": "กรุณากรอกอีเมล",
+            "firstName": "กรุณากรอกชื่อ",
+            "lastName": "กรุณากรอกนามสกุล",
+            "phone": "กรุณากรอกเบอร์โทรศัพท์มือถือ",
+            "termAndCond": "กรุณารับทราบนโยบายความเป็นส่วนตัว และข้อกำหนดและเงื่อนไขการใช้งาน",
+            "emailWrongFormat": "กรุณาใส่อีเมลที่ถูกต้อง",
+            "phoneWrongFormat": "รูปแบบเบอร์โทรศัพท์ไม่ถูกต้อง",
+            "emailExisting": "อีเมลนี้มีบัญชีใช้งานแล้ว ลองล็อกอินหรือทำเรื่องลืมรหัสผ่าน"
+        },
+        "otp": {
+            "title": "กรุณาตรวจสอบข้อความ",
+            "desc": "โปรดกรอกรหัส OTP ที่ถูกส่งไปยัง",
+            "ref": "ref:",
+            "verifyButton": "ยืนยัน",
+            "canResendInLabel": "รับ OTP ใหม่อีกครั้งได้ใน",
+            "didNotGetOTPLabel": "ยังไม่ได้รับ OTP?",
+            "resendLabel": "ส่งใหม่อีกครั้ง",
+            "wrongOTPToast": {
+                "title": " โปรดตรวจสอบอีกคร้ัง ",
+                "desc": "OTP ไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง"
+            },
+            "errorAlert": {
+                "title": "Error!",
+                "desc": "Oops...",
+                "okButton": "OK"
+            }
+        }
+    },
+    "createPasswordPage" : {
+        "title": "กรุณาตั้งรหัสผ่าน",
+        "desc": "กรุณาตั้งรหัสผ่านตามเงื่อนไขด้านล่าง เพื่อความปลอดภัยของบัญชี",
+        "createPasswordButton": "ตั้งรหัสผ่าน",
+        "errorMessage": {
+            "passwordEmpty": "กรุณากรอกรหัสผ่าน",
+            "confirmPasswordEmpty": "กรุณายืนยันรหัสผ่าน",
+            "confirmPasswordNotMatch": "รหัสผ่านไม่ตรงกัน"
+        },
+        "passwordConditions": {
+            "cond1": "Aa",
+            "cond2": "123",
+            "cond3": "8 ตัวอักษรขึ้นไป"
+        }
+    },
+    "resultPage": {
+        "title": "empeo พร้อมใช้งานแล้ว!",
+        "desc": "ยินดีด้วย! คุณสามารถเริ่มต้นทดลองใช้งานได้ทันที",
+        "letsGetStartedButton": "เริ่มต้นใช้งาน"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "companyTypeList": {
+        "wholeSale": "Wholesale",
+        "eCommerce": "eCommerce",
+        "technology": "Technology",
+        "software": "Software , App Development",
+        "infrastructure": "Infrastructure",
+        "itServices": "IT Services",
+        "manufacturing": "Manufacturing",
+        "construction": "Construction",
+        "hospitality": "Hospitality",
+        "automotive": "Automotive",
+        "logistics": "Logistics",
+        "importExport": "Import and Export",
+        "health": "Health",
+        "medicine": "Medicine & Pharmaceuticals",
+        "food": "Food & Beverage",
+        "finance": "Finance & Insurance",
+        "marketing": "Public Relations & Marketing",
+        "electronics": "Electronics",
+        "government": "Government Organization",
+        "researchCenter": "Research center",
+        "training": "Education and Training",
+        "realEstate": "Real Estate",
+        "accounting": "Accounting",
+        "service": "Service",
+        "other": "other"
+    }
+}
