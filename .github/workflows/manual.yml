@@ -54,7 +54,7 @@ jobs:
 
             TESTCASE=""
             if [ -n "${{ github.event.inputs.testcase }}" ]; then
-                TESTCASE="-g '${{ github.event.inputs.testcase }}'"
+                TESTCASE="-g ${{ github.event.inputs.testcase }}"
             fi
 
             if [ -n "$SCENARIO" ] || [ -n "$TESTCASE" ]; then
