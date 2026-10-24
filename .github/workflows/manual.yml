@@ -17,7 +17,7 @@ on:
         required: false
         type: string
       testcase:
-        description: 'TestCase (Testcase name ex.TC_REG_01-Register successfully with valid info)'
+        description: 'TestCase (Testcase name ex.TC_REG_01 and if want to specific run case, input the scenario)'
         required: false
         type: string
 jobs:
@@ -47,7 +47,7 @@ jobs:
                 BROWSER="--project=${{ github.event.inputs.browser }}"
             fi
 
-            SCENARIO="tests/"
+            SCENARIO=""
             if [ -n "${{ github.event.inputs.scenario }}" ]; then
                 SCENARIO="tests/${{ github.event.inputs.scenario }}"
             fi
@@ -56,6 +56,8 @@ jobs:
             if [ -n "${{ github.event.inputs.testcase }}" ]; then
                 TESTCASE="-g '${{ github.event.inputs.testcase }}'"
             fi
+
+            echo "Running with -> "npx playwright test $SCENARIO $TESTCASE $BROWSER"
 
             if [ -n "$SCENARIO" ] || [ -n "$TESTCASE" ]; then
                 echo "Running with -> Scenario: $SCENARIO | TestCase: $TESTCASE | Browser: ${{ github.event.inputs.browser }}"
