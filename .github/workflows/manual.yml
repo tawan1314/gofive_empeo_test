@@ -48,13 +48,13 @@ jobs:
             fi
 
             SCENARIO=""
-            if [ -n "${{ github.event.inputs.scenario }}"]; then
+            if [ -n "${{ github.event.inputs.scenario }}" ]; then
                 SCENARIO="${{ github.event.inputs.scenario }}"
             fi
 
             TESTCASE=""
-            if [ -n "${{ github.event.inputs.testcase }}"]; then
-                TESTCASE="-g ${{ github.event.inputs.testcase }}"
+            if [ -n "${{ github.event.inputs.testcase }}" ]; then
+                TESTCASE="-g '${{ github.event.inputs.testcase }}'"
             fi
 
             if [ -n "$SCENARIO" ] || [ -n "$TESTCASE" ]; then
