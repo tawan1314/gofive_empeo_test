@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [1, 2, 3]
         browser: [chromium, firefox, webkit]
+        language: [th, en]
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4

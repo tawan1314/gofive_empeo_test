@@ -34,7 +34,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [1, 2, 3]
         browser: [chromium, firefox, webkit]
     steps:
       - name: Checkout Repository
