@@ -2,21 +2,6 @@ name: Run Manual
 on:
   workflow_dispatch:
     inputs:
-      scenario:
-        description: 'Scenario'
-        options:
-            - All
-            - E2E_Flow
-            - RegisterFieldValidation
-            - OTPValidation
-            - CreatePasswordValidation
-        default: 'All'
-        required: true
-        type: choice
-      testcase:
-        description: 'TestCase (optional)'
-        required: false
-        type: string
       browser:
         description: 'Browser'
         default: 'All'
@@ -27,6 +12,14 @@ on:
             - webkit
         required: true
         type: choice
+      scenario:
+        description: 'Scenario (File name ex.SC01_E2E_Flow.spec.ts)'
+        required: false
+        type: string
+      testcase:
+        description: 'TestCase (Testcase name(full) ex.TC_REG_01-Register successfully with valid info (thai company))'
+        required: false
+        type: string
 jobs:
   test:
     timeout-minutes: 60
@@ -54,9 +47,19 @@ jobs:
                 BROWSER="--project=${{ github.event.inputs.browser }}"
             fi
 
-            if [ -n "${{ github.event.inputs.testcase }}" ]; then
-                echo "Running specific test case matching: ${{ github.event.inputs.testcase }}"
-                npx playwright test -g "${{ github.event.inputs.testcase }}" $BROWSER
+            SCENARIO=""
+            if [ -n "${{ github.event.inputs.scenario }}"]; then
+                SCENARIO="${{ github.event.inputs.scenario }}"
+            fi
+
+            TESTCASE=""
+            if [ -n "${{ github.event.inputs.testcase }}"]; then
+                TESTCASE="-g ${{ github.event.inputs.testcase }}"
+            fi
+
+            if [ -n "$SCENARIO" ] || [ -n "$TESTCASE" ]; then
+                echo "Running with -> Scenario: $SCENARIO | TestCase: $TESTCASE | Browser: ${{ github.event.inputs.browser }}"
+                npx playwright test $SCENARIO $TESTCASE $BROWSER
             else
                 echo "Running all tests..."
                 npx playwright test $BROWSER

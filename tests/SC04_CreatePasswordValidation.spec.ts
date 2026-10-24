@@ -1,7 +1,7 @@
 import { test } from '../fixtures/baseFixture';
 import { testdata } from '../utils/test-data.data';
 
-test.describe('Gofive_Negative_Test_Script', () => {
+test.describe('CreatePasswordValidation', () => {
 
     test.beforeEach(async ({ basePage }) => {
         await basePage.openEmpeoWebsite();

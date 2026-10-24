@@ -2,7 +2,7 @@ import { test } from '../fixtures/baseFixture';
 import { testdata } from '../utils/test-data.data';
 
 
-test.describe('Gofive_Positive_Test_Script', () => {
+test.describe('OTPValidation', () => {
 
     test.beforeEach(async ({ basePage }) => {
         await basePage.openEmpeoWebsite();

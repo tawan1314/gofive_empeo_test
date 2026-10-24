@@ -1,7 +1,7 @@
 import { test } from '../fixtures/baseFixture';
 import { testdata } from '../utils/test-data.data';
 
-test.describe('Gofive_Positive_Test_Script', () => {
+test.describe('E2E_Flow', () => {
 
     test.beforeEach(async ({ registerAPI, basePage }) => {
         await registerAPI.mockCompleteRegistrationFlow();
