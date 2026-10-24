@@ -42,12 +42,14 @@ jobs:
 
       - name: Run Playwright tests
         run: |
+            CMD="npx playwright test"
+
             BROWSER=""
             if [ "${{ github.event.inputs.browser }}" != "All" ]; then
                 BROWSER="--project=${{ github.event.inputs.browser }}"
             fi
 
-            SCENARIO=""
+            SCENARIO="tests/"
             if [ -n "${{ github.event.inputs.scenario }}" ]; then
                 SCENARIO="tests/${{ github.event.inputs.scenario }}"
             fi
@@ -59,10 +61,10 @@ jobs:
 
             if [ -n "$SCENARIO" ] || [ -n "$TESTCASE" ]; then
                 echo "Running with -> Scenario: $SCENARIO | TestCase: $TESTCASE | Browser: ${{ github.event.inputs.browser }}"
-                npx playwright test $SCENARIO $TESTCASE $BROWSER
+                $CMD $SCENARIO $TESTCASE $BROWSER
             else
                 echo "Running all tests..."
-                npx playwright test $BROWSER
+                $CMD $BROWSER
             fi
         env:
           SCENARIO: ${{ github.event.inputs.scenario }}
