@@ -23,8 +23,8 @@ on:
       language:
         description: 'Languange (th || en)'
         options:
-            - th
-            - en
+            - "th"
+            - "en"
         required: true
         type: choice
 jobs:
@@ -54,6 +54,8 @@ jobs:
 
       - name: Run Playwright tests
         run: |
+            LANGUAGE="$env:TEST_LANG=${{ github.event.inputs.language }};"
+
             BROWSER=""
             if [ "${{ github.event.inputs.browser }}" != "All" ]; then
                 BROWSER="--project=${{ github.event.inputs.browser }}"
@@ -71,7 +73,7 @@ jobs:
 
             if [ -n "$SCENARIO" ] || [ -n "$TESTCASE" ]; then
                 echo "Running with -> Scenario: $SCENARIO | TestCase: $TESTCASE | Browser: ${{ github.event.inputs.browser }} | Lang: ${{ github.event.inputs.language }}"
-                npx playwright test $SCENARIO $TESTCASE $BROWSER
+                $LANGUAGE npx playwright test $SCENARIO $TESTCASE $BROWSER
             else
                 echo "Running all tests..."
                 npx playwright test $BROWSER
