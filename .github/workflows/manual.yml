@@ -49,7 +49,7 @@ jobs:
 
             SCENARIO=""
             if [ -n "${{ github.event.inputs.scenario }}" ]; then
-                SCENARIO="tests/${{ github.event.inputs.scenario }}"
+                SCENARIO="${{ github.event.inputs.scenario }}"
             fi
 
             TESTCASE=""
