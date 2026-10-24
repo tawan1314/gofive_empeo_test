@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-const currentLang = process.env.TEST_LANG || 'th'; // en-US th-TH
+const currentLang = process.env.TEST_LANG || 'th'; // en
 const localeSetting = currentLang === 'en' ? 'en-US' : 'th-TH';
 
 /**

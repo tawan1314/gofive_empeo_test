@@ -48,8 +48,16 @@ gofive_test/
 `npx playwright install`
 
 ## 🏃‍♂️ How to Run Tests
-- รันเทสด้วยคำสั่งนี้บน Terminal => `npx playwright test`
-- ปรับภาษาที่ต้องการรันได้ที่ไฟล์ playwright.confic.ts => locale 'en-US' หรือ 'th-TH'
+1. รันเทสด้วยคำสั่งนี้บน Terminal
+- ต้องการรันเทสทั้งหมด      => `npx playwright test`
+- ต้องการรันเฉพาะไฟล์      => `npx playwright test tests/SC01_E2E_Flow.spec.ts`
+- ต้องการรันเฉพาะเคส       => `npx playwright test tests/SC01_E2E_Flow.spec.ts -g "TC_REG_01"`
+- ต้องการรันเฉพาะ browser  => `npx playwright test tests/SC01_E2E_Flow.spec.ts --project=chromium`
+- ต้องการรันเฉพาะภาษา     => `$env:TEST_LANG="th"; npx playwright test`
+
+- `-g ตามด้วยชื่อเคส`          เลือกรันเฉพาะเคสที่ต้องการภายในไฟล์ จึงต้องระบุไฟล์ไว้ด้วย
+- `--project=chromium`      เลือก browser => chromium, firefox, webkit (หรือ ดูได้ในไฟล์ playwright.config.ts)
+- `$env:TEST_LANG="th";`    เลือกภาษา     => th หรือ en (ตั้งต้นเป็น th)
 
 ## 🧪 Test Scope & Scenarios Covered
 โปรเจคนี้ครอบคลุมการทดสอบทั้งแบบ Positive และ Negative ดังนี้:
