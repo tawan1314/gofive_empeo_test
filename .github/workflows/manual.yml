@@ -1,4 +1,4 @@
-name: Run Manual - Gofive - Empeo
+name: Run Manual
 on:
   workflow_dispatch:
     inputs:
@@ -17,11 +17,16 @@ on:
         description: 'TestCase (optional)'
         required: false
         type: string
-      branch:
-        description: 'Branch'
-        default: 'main'
+      browser:
+        description: 'Browser'
+        default: 'All'
+        options:
+            - All
+            - chromium
+            - firefox
+            - webkit
         required: true
-        type: string
+        type: choice
 jobs:
   test:
     timeout-minutes: 60
@@ -29,8 +34,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.branch }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -46,16 +49,22 @@ jobs:
 
       - name: Run Playwright tests
         run: |
+            BROWSER=""
+            if [ "${{ github.event.inputs.browser }}" != "All" ]; then
+                BROWSER="--project=${{ github.event.inputs.browser }}"
+            fi
+
             if [ -n "${{ github.event.inputs.testcase }}" ]; then
                 echo "Running specific test case matching: ${{ github.event.inputs.testcase }}"
-                npx playwright test -g "${{ github.event.inputs.testcase }}"
+                npx playwright test -g "${{ github.event.inputs.testcase }}" $BROWSER
             else
                 echo "Running all tests..."
-                npx playwright test
+                npx playwright test $BROWSER
             fi
         env:
           SCENARIO: ${{ github.event.inputs.scenario }}
           TESTCASE: ${{ github.event.inputs.testcase }}
+          BROWSER: ${{ github.event.inputs.browser }}
 
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v4
