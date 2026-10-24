@@ -1,4 +1,7 @@
 name: Run Manual
+
+run-name: "Test: ${{ inputs.scenario != '' && inputs.scenario || 'All Scenarios' }} ${{ inputs.testcase != '' && format('({0})', inputs.testcase) || '' }} | Browser: ${{ inputs.browser }} | Lang: ${{ inputs.language }}"
+
 on:
   workflow_dispatch:
     inputs:
