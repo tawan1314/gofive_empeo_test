@@ -24,7 +24,7 @@ on:
         type: string
 jobs:
   test:
-    timeout-minutes: 2
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -47,8 +47,10 @@ jobs:
       - name: Run Playwright tests
         run: |
             if [ -n "${{ github.event.inputs.testcase }}" ]; then
+                echo "Running specific test case matching: ${{ github.event.inputs.testcase }}"
                 npx playwright test -g "${{ github.event.inputs.testcase }}"
             else
+                echo "Running all tests..."
                 npx playwright test
             fi
         env:
