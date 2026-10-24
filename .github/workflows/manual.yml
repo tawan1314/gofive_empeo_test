@@ -57,8 +57,6 @@ jobs:
                 TESTCASE="-g '${{ github.event.inputs.testcase }}'"
             fi
 
-            echo "Running with -> "npx playwright test $SCENARIO $TESTCASE $BROWSER"
-
             if [ -n "$SCENARIO" ] || [ -n "$TESTCASE" ]; then
                 echo "Running with -> Scenario: $SCENARIO | TestCase: $TESTCASE | Browser: ${{ github.event.inputs.browser }}"
                 npx playwright test $SCENARIO $TESTCASE $BROWSER
