@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const currentLang = process.env.TEST_LANG || 'th'; // en-US th-TH
+const localeSetting = currentLang === 'en' ? 'en-US' : 'th-TH';
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -31,10 +34,10 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     viewport: null,
-    screenshot: 'on',
-    video: 'on',
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
     actionTimeout: 40 * 1000,
-    locale: 'en-US' // en-US th-TH
+    locale: localeSetting
   },
   timeout: 180 * 1000,
   expect: {

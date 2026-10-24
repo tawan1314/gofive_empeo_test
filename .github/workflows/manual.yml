@@ -20,10 +20,22 @@ on:
         description: 'TestCase (Testcase name ex.TC_REG_01 and if want to specific run case, input the scenario)'
         required: false
         type: string
+      language:
+        description: 'Languange (th || en)'
+        options:
+            - th
+            - en
+        required: true
+        type: choice
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3]
+        browser: [chromium, firefox, webkit]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -58,7 +70,7 @@ jobs:
             fi
 
             if [ -n "$SCENARIO" ] || [ -n "$TESTCASE" ]; then
-                echo "Running with -> Scenario: $SCENARIO | TestCase: $TESTCASE | Browser: ${{ github.event.inputs.browser }}"
+                echo "Running with -> Scenario: $SCENARIO | TestCase: $TESTCASE | Browser: ${{ github.event.inputs.browser }} | Lang: ${{ github.event.inputs.language }}"
                 npx playwright test $SCENARIO $TESTCASE $BROWSER
             else
                 echo "Running all tests..."
@@ -68,6 +80,7 @@ jobs:
           SCENARIO: ${{ github.event.inputs.scenario }}
           TESTCASE: ${{ github.event.inputs.testcase }}
           BROWSER: ${{ github.event.inputs.browser }}
+          TEST_LANG: ${{ github.event.inputs.language }}
 
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v4
