@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project: [chromium]
+        browser: [Google Chrome, Microsoft Edge]
         language: [th, en]
     steps:
     - uses: actions/checkout@v4
